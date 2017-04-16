@@ -14,11 +14,16 @@ $fa-version:    "4.0.3" !default;
 }
 @font-face {
   font-family: 'neoteric';
-  src: url('#{$fa-font-path}/neoteric-bold.ttf') format('truetype');
+  src: url('#{$fa-font-path}/neoteric-regular.ttf');
   font-weight: normal;
   font-style: normal;
 }
-
+@font-face {
+  font-family: 'neoteric';
+  src: url('#{$fa-font-path}/neoteric-bold.ttf');
+  font-weight: bold;
+  font-style: normal;
+}
 %icon {
   display: inline-block;
   font-family: FontAwesome;
