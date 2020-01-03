@@ -1,4 +1,3 @@
-.DS_Store
 .sass-cache
 build
 dist
@@ -10,3 +9,4 @@ dist
 Session.vim
 .netrwhist
 *~
+cv
