@@ -1,6 +1,6 @@
-# Pandoc-MordenCV
+# Pandoc-ModernCV
 
-Pandoc-MordenCV uses [Pandoc](https://pandoc.org/) facilities to allow you to write curriculums vitae in markdown. Inspired by the well known Latex ModernCV,
+Pandoc-ModernCV uses [Pandoc](https://pandoc.org/) facilities to allow you to write curriculums vitae in markdown. Inspired by the well known Latex ModernCV,
 it is fairly customizable, allowing you to use predefined themes and to define your own style by changing colors, fonts, etc.
 
 ## Features
@@ -19,19 +19,14 @@ it is fairly customizable, allowing you to use predefined themes and to define y
 ## Requirements & Installation
 
 For building your CV in html you need:
-- [Compass](http://compass-style.org/) (>= 1.0)
-    `gem install compass`
-- [Susy](http://susy.oddbird.net/) (>= 2.2)
-    `gem install susy`
-- [Pandoc](http://johnmacfarlane.net/pandoc/) (>= 1.13)
-    `sudo dnf install pandoc`
+- [Compass](http://compass-style.org/) (>= 1.0) `gem install compass`
+- [Susy](http://susy.oddbird.net/) (>= 2.2) `gem install susy`
+- [Pandoc](http://johnmacfarlane.net/pandoc/) (>= 1.13) `sudo dnf install pandoc`
 - [RSync](http://rsync.samba.org/)
 
 For exporting to pdf, you need:
-- [exiftool](http://johnmacfarlane.net/pandoc/) (>= 1.13)
-    `sudo dnf install perl-Image-ExifTool`
-- [wkhtmltopdf](http://johnmacfarlane.net/pandoc/) (>= 1.13)
-    `sudo dnf install wkhtmltopdf`
+- [exiftool](https://exiftool.org/) (>= 11.70) `sudo dnf install perl-Image-ExifTool`
+- [wkhtmltopdf](https://wkhtmltopdf.org/) (>= 0.12.5) `sudo dnf install wkhtmltopdf`
 
 ## Getting Started
 
@@ -145,40 +140,11 @@ To build a private CV just do:
 
 Currently pandoc-moderncv supports a two themes: classic and alternative.
 
-> Feel free to contribute and send me your custom theme!
+You can chose a theme by setting the `THEME` varible. For instance:
+```
+$ make html THEME=alternative
+```
 
 ### Colors, Fonts, Icons
 
-All themes can be customized through variables defined in *stylesheets/_settings.scss*. Currently the variables are:
-
-    $base-font-size: 18px;
-    $base-line-height: 23px;
-
-    $photo-width: 182px;
-    $qrcode-width: 100px;
-
-    // Size
-    $h1-font-size:      $base-font-size*2;
-    $h1-line-multiple:  2;
-    $h2-font-size:      $base-font-size*1.5;
-    $h2-line-multiple:  1.5;
-    $h3-font-size:      $base-font-size*1.2;
-    $h3-line-multiple:  1;
-
-    // Colors
-    $firstname-color: rgb(0, 0, 0);
-    $familyname-color: rgb(0, 0, 0);
-    $title-color: rgb(89, 89, 89);
-    $address-color: rgb(0, 0, 0);
-    $quote-color: rgb(0, 0, 0);
-    $section-rectangle-color: rgb(191, 191, 191);
-    $section-title-color: rgb(89, 89, 89);
-    $subsection-color: rgb(0, 0, 0);
-    $hint-color: rgb(0, 0, 0);
-
-    // Icons
-    $external-link-icon: $fa-var-external-link;
-    $email-icon: $fa-var-envelope-o;
-    $phone-icon: $fa-var-phone;
-    $mobile-icon: $fa-var-mobile;
-    $fax-icon: $fa-var-print;
+All themes can be customized through variables defined in *stylesheets/_settings.scss*.
