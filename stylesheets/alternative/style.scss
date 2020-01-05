@@ -37,6 +37,13 @@ p, dt {
             hyphens: auto;
 }
 
+td {
+    img {
+        width: 25%;
+    }
+}
+
+
 a {
     text-decoration: none;
     color: inherit;
@@ -180,11 +187,21 @@ section {
         color: $section-title-color;
 		display: flex;
 
-		&:after,
+		&:after {
+            content: "";
+			flex: 1;
+            margin: auto;
+            margin-left: gutter();
+            height: 2px;
+            margin-bottom: rhythm($h2-line-multiple/2, $h2-font-size);
+            background-color: $section-rectangle-color;
+
+        }
         &:before {
             content: "";
 			flex: 1;
-			margin:auto gutter();
+            margin: auto;
+            margin-right: gutter();
             height: 2px;
             margin-bottom: rhythm($h2-line-multiple/2, $h2-font-size);
             background-color: $section-rectangle-color;
@@ -254,6 +271,7 @@ footer {
     @include rhythm(1, 1);
 
     text-align: center;
+    padding: 0px;
 
     li { display: inline; &:before{ content: '\25CF'; padding: 10px; color: $section-rectangle-color; } }
     //p { @include leader(0.1); }
